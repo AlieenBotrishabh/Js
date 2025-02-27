@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './index.css';
+// import './index.css';
+import Select from './components/Select';
 
 function App() {
   const [password, setPassword] = useState('');
@@ -22,21 +23,24 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="input-box">
-        <input
-          type="password"
-          placeholder="Enter your Password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-            checkPasswordStrength(e.target.value);
-          }}
-        />
-        <button type="submit">⇒</button>
-        {password && <p id="message">Password is <span>{strength}</span></p>}
-      </div>
-    </div>
+    <>
+    <Select />
+    </>
+    // <div className="container">
+    //   <div className="input-box">
+    //     <input
+    //       type="password"
+    //       placeholder="Enter your Password"
+    //       value={password}
+    //       onChange={(e) => {
+    //         setPassword(e.target.value);
+    //         checkPasswordStrength(e.target.value);
+    //       }}
+    //     />
+    //     <button type="submit">⇒</button>
+    //     {password && <p id="message">Password is <span>{strength}</span></p>}
+    //   </div>
+    // </div>
   );
 }
 
